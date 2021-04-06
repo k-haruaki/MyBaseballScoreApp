@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.App {
+text-align: center;
+width: 95%;
+margin: 15px auto;
+}
+
+.container-drag {
+text-align: center;
+}
+
+.unselected {
+display: flex;
+width: 100%;
+margin-bottom: 5px;
+background-color: #FBF2ED;
+border-style: solid;
+border-width: 2px;
+color: #45597E;
+}
+
+.header {
+display: inline-block;
+color: #45597E;
+font-family: sans-serif;
+margin: 0;
+width:100%;
+}
+
+.task-header {
+display: inline-block;
+width: 30px;
+background-color: #DBE2F4;
+color: #45597E;
+font-family: sans-serif;
+padding-left: 5px;
+padding-right: 5px;
+font-weight: bold;
+border-right-style: solid;
+border-width: 2px;
+
+}
+
+.droppable {
+display: flex;
+width: 100%;
+margin-bottom: 5px;
+background-color: #FBF2ED;
+border-style: solid;
+border-width: 2px;
+color: #45597E;
+}
+
+.draggable {
+width: 100px;
+height: 50px;
+margin: 5px;
+line-height: 45px;
+border-style: solid;
+border-width: 2px;
+color: #45597E;
+font-family: sans-serif;
+font-weight: bold;
+}
+
+.card-area {
+display: flex;
+flex-wrap: wrap;
+}
