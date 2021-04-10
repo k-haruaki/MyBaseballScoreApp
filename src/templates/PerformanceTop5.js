@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ScoreTop5 = () => {
+const PerformanceTop5 = () => {
 
   return (
     <>
@@ -9,4 +9,4 @@ const ScoreTop5 = () => {
   )
 }
 
-export default ScoreTop5;
+export default PerformanceTop5;

@@ -90,9 +90,23 @@ const MainFrame = (props) => {
   const [open, setOpen] = useState(false);
   
   const pageTitle = 'My Baseball Score Lab';
-  const teamInfo = ['トップページ', 'お知らせ', '試合日程', '試合結果', '勝敗表'];
-  const teamScore = ['部門Top5', '投手成績', '打者成績'];
-  const scoreInput = ['試合結果', 'チーム成績', '個人成績'];
+  const teamInfo = [
+    {pagePath: 'top', pageName: 'トップページ'},
+    {pagePath: 'information', pageName: 'お知らせ'},
+    {pagePath: 'match-schedule', pageName: '試合日程'},
+    {pagePath: 'match-result', pageName: '試合結果'},
+    {pagePath: 'win-lose-table', pageName: '勝敗表'}
+  ];
+  const performance = [
+    {pagePath: 'performance-top5', pageName: '部門Top5'},
+    {pagePath: 'pitcher-performance', pageName: '投手成績'},
+    {pagePath: 'butter-performance', pageName: '打者成績'},
+  ];
+  const scoreInput = [
+    {pagePath: 'input/match-result', pageName: '試合結果'},
+    {pagePath: 'input/team-performance', pageName: 'チーム成績'},
+    {pagePath: 'input/person-performance', pageName: '個人成績'},
+  ];
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -103,8 +117,9 @@ const MainFrame = (props) => {
   };
 
   // サイドバーのチームクリックイベント
-  const selectMenuClick = (e, index, menuName) => {
-    dispatch(getMenuData(index, menuName));
+  const selectMenuClick = (e, index, menuValue) => {
+    console.log(menuValue)
+    dispatch(getMenuData(index, menuValue));
     handleDrawerClose();
   }
 
@@ -148,28 +163,28 @@ const MainFrame = (props) => {
         </div>
         <Divider />
         <List>
-          {teamInfo.map((text, index) => (
-            <ListItem button key={text} onClick={(event) => selectMenuClick(event, index, text)}>
+          {teamInfo.map((value, index) => (
+            <ListItem button key={value.pageName} onClick={(event) => selectMenuClick(event, index, value)}>
               <ListItemIcon>{index % 2 === 0 ? <SportsBaseballTwoToneIcon /> : <SportsBaseballOutlinedIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={value.pageName} />
             </ListItem>
           ))}
         </List>
         <Divider />
         <List>
-          {teamScore.map((text, index) => (
-            <ListItem button key={text} onClick={(event) => selectMenuClick(event, index, text)}>
+          {performance.map((value, index) => (
+            <ListItem button key={value.pageName} onClick={(event) => selectMenuClick(event, index, value)}>
               <ListItemIcon>{index % 2 === 0 ? <InsertChartTwoToneIcon /> : <InsertChartOutlinedIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={value.pageName} />
             </ListItem>
           ))}
         </List>
         <Divider />
         <List>
-          {scoreInput.map((text, index) => (
-            <ListItem button key={text} onClick={(event) => selectMenuClick(event, index, text)}>
+          {scoreInput.map((value, index) => (
+            <ListItem button key={value.pageName} onClick={(event) => selectMenuClick(event, index, value)}>
               <ListItemIcon>{index % 2 === 0 ? <BorderColorTwoToneIcon /> : <BorderColorOutlinedIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={value.pageName} />
             </ListItem>
           ))}
         </List>

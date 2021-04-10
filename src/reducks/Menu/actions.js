@@ -5,6 +5,7 @@ export const selectMenuAction = (menuState) => {
         type: "SELECT_MENU",
         payload: {
             id: menuState.id,
+            path: menuState.path,
             name: menuState.name,
         }
     }

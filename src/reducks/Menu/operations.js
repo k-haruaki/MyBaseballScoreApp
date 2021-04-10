@@ -1,16 +1,19 @@
-import { selectMenuAction } from './action';
+import { selectMenuAction } from './actions';
 import { push } from 'connected-react-router';
 
-export const getMenuData = (index, menuName) => {
+export const getMenuData = (index, menuVal) => {
+    console.log(menuVal)
+    console.log(menuVal.pagePath)
     return async (dispatch) => {
         dispatch(
             selectMenuAction({
                 id: index,
-                name: menuName,
+                path: menuVal.pagePath,
+                name: menuVal.pageName,
             })
         );
 
-        dispatch(push('/' + menuName));
-        
+        dispatch(push('/' + menuVal.pagePath));
+
     }
 }

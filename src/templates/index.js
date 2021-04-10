@@ -1,2 +1,2 @@
 export { default as Home } from './Home'
-export { default as ScoreTop5 } from './ScoreTop5'
+export { default as PerformanceTop5 } from './PerformanceTop5'
