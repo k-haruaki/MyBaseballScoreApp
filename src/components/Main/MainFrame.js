@@ -105,6 +105,7 @@ const MainFrame = (props) => {
   ];
   const scoreInput = [
     {pagePath: 'input/match-result', pageName: '試合結果'},
+    {pagePath: 'input/player', pageName: '選手登録'},
     {pagePath: 'input/team-performance', pageName: 'チーム成績'},
     {pagePath: 'input/person-performance', pageName: '個人成績'},
   ];
