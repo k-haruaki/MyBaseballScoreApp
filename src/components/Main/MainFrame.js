@@ -1,7 +1,7 @@
 import React, { useState }from 'react';
 import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
-import { getMenuData } from '../../reducks/Menu/operations';
+import { selectMenu } from '../../reducks/Menu/operations';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -120,7 +120,7 @@ const MainFrame = (props) => {
 
   // サイドバーのチームクリックイベント
   const selectMenuClick = (e, index, menuValue) => {
-    dispatch(getMenuData(index, menuValue));
+    dispatch(selectMenu(index, menuValue));
     handleDrawerClose();
   }
 

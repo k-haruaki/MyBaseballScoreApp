@@ -1,4 +1,4 @@
-import React,  { useState, useCallback } from 'react';
+import React,  { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { PrimaryTable } from '../../components/UIkit';
 import { selectPlayer } from '../../reducks/Player/operations'
@@ -64,11 +64,11 @@ const PlayerList = () => {
     const dispatch = useDispatch();
     const selector = useSelector((state) => state);
 
-    const [isOpenPlayerDetails, setIsOpenPlayerDetails] = useState(false);
+    // const [isOpenPlayerDetails, setIsOpenPlayerDetails] = useState(false);
 
     const openPlayerDetails = useCallback((data) => {
         dispatch(selectPlayer(data));
-    }, [setIsOpenPlayerDetails])
+    }, [dispatch])
 
     console.log(selector.playerData);
 

@@ -1,7 +1,7 @@
 import { selectMenuAction } from './actions';
 import { push } from 'connected-react-router';
 
-export const getMenuData = (index, menuVal) => {
+export const selectMenu = (index, menuVal) => {
     return async (dispatch) => {
         dispatch(
             selectMenuAction({
