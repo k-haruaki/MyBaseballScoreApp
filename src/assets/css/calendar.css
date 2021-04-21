@@ -1,0 +1,14 @@
+/* 土曜日(青文字) */
+.react-calendar .react-calendar__tile:nth-child(7n) {
+  color: #0000ff;
+}
+
+/* 日曜日(赤文字) */
+.react-calendar .react-calendar__tile:nth-child(7n+1) {
+    color: #ff0000;
+}
+
+/* 来月(グレー文字) */
+.react-calendar .react-calendar__month-view__days__day--neighboringMonth {
+    color: #757575 !important;
+  }

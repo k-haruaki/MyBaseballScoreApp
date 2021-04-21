@@ -7,6 +7,7 @@ import * as History from 'history';
 import App from './App';
 
 import './assets/css/index.css';
+import './assets/css/calendar.css';
 
 const history = History.createBrowserHistory();
 export const store = createStore(history);

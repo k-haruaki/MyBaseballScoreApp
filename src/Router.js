@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, Information, PerformanceTop5, PlayerList } from './templates';
+import { Home, Information, MatchSchedule, PerformanceTop5, PlayerList } from './templates';
 import MainFrame from './components/Main/MainFrame';
 import WinLoseTable from './templates/teamInfo/WinLoseTable';
 
@@ -11,6 +11,7 @@ const Router = () => {
                 <Switch>
                     <Route exact path='/top' component={Home} />
                     <Route exact path='/information' component={Information} />
+                    <Route exact path='/match-schedule' component={MatchSchedule} />
                     <Route exact path='/win-lose-table' component={WinLoseTable} />
                     <Route exact path='/player-list' component={PlayerList} />
 
