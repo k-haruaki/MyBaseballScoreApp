@@ -1,8 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, Information, MatchSchedule, PerformanceTop5, PlayerList } from './templates';
+import { Home, Information, MatchResultList, MatchSchedule, PerformanceTop5, PlayerList } from './templates';
 import MainFrame from './components/Main/MainFrame';
-import WinLoseTable from './templates/teamInfo/WinLoseTable';
 
 const Router = () => {
     return (
@@ -12,7 +11,7 @@ const Router = () => {
                     <Route exact path='/top' component={Home} />
                     <Route exact path='/information' component={Information} />
                     <Route exact path='/match-schedule' component={MatchSchedule} />
-                    <Route exact path='/win-lose-table' component={WinLoseTable} />
+                    <Route exact path='/win-lose-table' component={MatchResultList} />
                     <Route exact path='/player-list' component={PlayerList} />
 
                     <Route exact path='/performance/top5' component={PerformanceTop5} />

@@ -95,7 +95,7 @@ const MainFrame = (props) => {
     {pagePath: 'information', pageName: 'お知らせ'},
     {pagePath: 'match-schedule', pageName: '試合日程・結果'},
     // {pagePath: 'match-result', pageName: '試合結果'},
-    {pagePath: 'win-lose-table', pageName: '勝敗表'},
+    {pagePath: 'match-result-list', pageName: '試合結果一覧'},
     {pagePath: 'player-list', pageName: '選手一覧'},
   ];
   const performance = [

@@ -8,8 +8,10 @@ const CustomCalendar = () => {
         {
             date: new Date (new Date()),
             month_item: {
-                20210419: {text: '試合'},
-                20210421: {text: '今日の予定'}
+                20210401: {team: 'サトワラーズ', score: '◯ 4-1 '},
+                20210419: {team: 'シモチャンズ', score: '● 1-3 '},
+                20210421: {team: 'タニダーズ', score: '◯ 4-1 '},
+                20210425: {team: 'タカーズ', score: '◯ 5-4 '}
             }
         }
     );
@@ -18,9 +20,10 @@ const CustomCalendar = () => {
         if ('month' === date.view) {
             const datetime = DateTime.fromISO(date.date.toISOString());
             const targetDate = datetime.toFormat('yyyyMMdd');
-            return calendarData.month_item[targetDate] && calendarData.month_item[targetDate].text ?
+            return calendarData.month_item[targetDate] && calendarData.month_item[targetDate].team ?
                 <div>
-                    <p>{calendarData.month_item[targetDate].text}</p>
+                    <p>{calendarData.month_item[targetDate].team}</p>
+                    <p>{calendarData.month_item[targetDate].score}</p>
                 </div>
                 :null
         }
