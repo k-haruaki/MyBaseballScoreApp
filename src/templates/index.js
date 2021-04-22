@@ -7,5 +7,7 @@ export { default as PlayerList } from './teamInfo/PlayerList';
 
 // performance
 export { default as PerformanceTop5 } from './performance/PerformanceTop5';
+export { default as PitcherPerformance } from './performance/PitcherPerformance';
+export { default as ButterPerformance } from './performance/ButterPerformance';
 
 // input
