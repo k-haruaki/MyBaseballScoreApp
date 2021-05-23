@@ -5,10 +5,7 @@ const Information = () => {
   return (
     <>
       <div className='main'>
-          <div className='main-title'>
-            <h2>インフォメーションページ</h2>
-          </div>
-          <div className='main-content'>
+          <div className='main-message'>
             <h2>インフォメーションページのコンテンツを表示する</h2>
           </div>
       </div>

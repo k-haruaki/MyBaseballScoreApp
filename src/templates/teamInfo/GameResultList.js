@@ -30,9 +30,6 @@ const WinLoseTable = () => {
     return (
         <>
             <div className='main'>
-                <div className='main-title'>
-                    <h2>勝敗表</h2>
-                </div>
                 <div className='main-content'>
                     <PrimaryTable
                         columns={columns}

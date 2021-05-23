@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-const menuSelector = (state) => state.menuValue;
+const menuSelector = (state) => state.menuData;
 
 export const getMenuId = createSelector (
     [menuSelector],

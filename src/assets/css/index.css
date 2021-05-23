@@ -20,70 +20,84 @@ code {
 
 
 .App {
-text-align: center;
-width: 95%;
-margin: 15px auto;
+  text-align: center;
+  width: 95%;
+  margin: 15px auto;
 }
 
 .container-drag {
-text-align: center;
+  text-align: center;
+}
+
+.main-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+   
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  text-transform: uppercase;
+  width: 800px;
 }
 
 .unselected {
-display: flex;
-width: 100%;
-margin-bottom: 5px;
-background-color: #FBF2ED;
-border-style: solid;
-border-width: 2px;
-color: #45597E;
+  display: flex;
+  width: 100%;
+  margin-bottom: 5px;
+  background-color: #FBF2ED;
+  border-style: solid;
+  border-width: 2px;
+  color: #45597E;
 }
 
 .header {
-display: inline-block;
-color: #45597E;
-font-family: sans-serif;
-margin: 0;
-width:100%;
+  display: inline-block;
+  color: #45597E;
+  font-family: sans-serif;
+  margin: 0;
+  width:100%;
 }
 
 .task-header {
-display: inline-block;
-width: 30px;
-background-color: #DBE2F4;
-color: #45597E;
-font-family: sans-serif;
-padding-left: 5px;
-padding-right: 5px;
-font-weight: bold;
-border-right-style: solid;
-border-width: 2px;
-
+  display: inline-block;
+  width: 30px;
+  background-color: #DBE2F4;
+  color: #45597E;
+  font-family: sans-serif;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
+  border-right-style: solid;
+  border-width: 2px;
 }
 
 .droppable {
-display: flex;
-width: 100%;
-margin-bottom: 5px;
-background-color: #FBF2ED;
-border-style: solid;
-border-width: 2px;
-color: #45597E;
+  display: flex;
+  width: 100%;
+  margin-bottom: 5px;
+  background-color: #FBF2ED;
+  border-style: solid;
+  border-width: 2px;
+  color: #45597E;
 }
 
 .draggable {
-width: 100px;
-height: 50px;
-margin: 5px;
-line-height: 45px;
-border-style: solid;
-border-width: 2px;
-color: #45597E;
-font-family: sans-serif;
-font-weight: bold;
+  width: 100px;
+  height: 50px;
+  margin: 5px;
+  line-height: 45px;
+  border-style: solid;
+  border-width: 2px;
+  color: #45597E;
+  font-family: sans-serif;
+  font-weight: bold;
 }
 
 .card-area {
-display: flex;
-flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }

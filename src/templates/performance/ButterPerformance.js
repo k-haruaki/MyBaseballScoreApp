@@ -56,9 +56,6 @@ const ButterPerformance = () => {
     return (
         <>
           <div className='main'>
-              <div className='main-title'>
-                <h2>打者成績</h2>
-              </div>
               <div className='main-content'>
                 <PrimaryTable
                     columns={columns}

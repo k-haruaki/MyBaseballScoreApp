@@ -1,5 +1,5 @@
 const initialState = {
-    menuVal: {
+    menuData: {
         id: '',
         path: '',
         name: '',

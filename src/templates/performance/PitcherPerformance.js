@@ -53,9 +53,6 @@ const PitcherPerformance = () => {
   return (
     <>
       <div className='main'>
-        <div className='main-title'>
-          <h2>投手成績</h2>
-        </div>
         <div className='main-content'>
           <PrimaryTable
             columns={columns}

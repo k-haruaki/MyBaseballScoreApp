@@ -12,7 +12,7 @@ import { PlayerReducer } from '../Player/reducers';
 export default function createStore (history) {
     return reduxCreateStore(
         combineReducers({
-            manuVal: MenuReducer,
+            menuData: MenuReducer,
             playerData: PlayerReducer,
             router: connectRouter(history),
         }),

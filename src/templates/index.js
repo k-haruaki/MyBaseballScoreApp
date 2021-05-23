@@ -1,8 +1,9 @@
 // teamInfo
 export { default as Home } from './teamInfo/Home';
 export { default as Information } from './teamInfo/Information';
-export { default as MatchSchedule } from './teamInfo/MatchSchedule'
-export { default as MatchResultList } from './teamInfo/MatchResultList';
+export { default as GameSchedule } from './teamInfo/GameSchedule'
+export { default as GameResultList } from './teamInfo/GameResultList';
+export { default as GameDetailResult } from './teamInfo/GameDetailResult';
 export { default as PlayerList } from './teamInfo/PlayerList';
 
 // performance

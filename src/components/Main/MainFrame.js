@@ -1,7 +1,8 @@
 import React, { useState }from 'react';
 import clsx from 'clsx';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectMenu } from '../../reducks/Menu/operations';
+import { getMenuName } from '../../reducks/Menu/selecters';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -24,7 +25,7 @@ import BorderColorOutlinedIcon from '@material-ui/icons/BorderColorOutlined';
 import SportsBaseballTwoToneIcon from '@material-ui/icons/SportsBaseballTwoTone';
 import SportsBaseballOutlinedIcon from '@material-ui/icons/SportsBaseballOutlined';
 
-const drawerWidth = 270;
+const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,14 +39,14 @@ const useStyles = makeStyles((theme) => ({
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
+    marginRight: drawerWidth,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
+  title: {
+    flexGrow: 1,
   },
   hide: {
     display: 'none',
@@ -63,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
   },
   content: {
     flexGrow: 1,
@@ -72,14 +73,14 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: -drawerWidth,
+    marginRight: -drawerWidth,
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: 0,
+    marginRight: 0,
   },
 }));
 
@@ -87,15 +88,18 @@ const MainFrame = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const dispatch = useDispatch();
+  const selector = useSelector(state => state);
+  const pageSubTitle = getMenuName(selector);
   const [open, setOpen] = useState(false);
   
+
   const pageTitle = 'My Baseball Score Lab';
   const teamInfo = [
     {pagePath: 'top', pageName: 'トップページ'},
     {pagePath: 'information', pageName: 'お知らせ'},
-    {pagePath: 'match-schedule', pageName: '試合日程・結果'},
+    {pagePath: 'game-schedule', pageName: '試合日程・結果'},
     // {pagePath: 'match-result', pageName: '試合結果'},
-    {pagePath: 'match-result-list', pageName: '試合結果一覧'},
+    {pagePath: 'game-result-list', pageName: '試合結果一覧'},
     {pagePath: 'player-list', pageName: '選手一覧'},
   ];
   const performance = [
@@ -104,7 +108,7 @@ const MainFrame = (props) => {
     {pagePath: 'performance/butter', pageName: '打者成績'},
   ];
   const scoreInput = [
-    {pagePath: 'input/match-result', pageName: '試合結果'},
+    {pagePath: 'input/game-result', pageName: '試合結果'},
     {pagePath: 'input/player', pageName: '選手登録'},
     {pagePath: 'input/team-performance', pageName: 'チーム成績'},
     {pagePath: 'input/person-performance', pageName: '個人成績'},
@@ -121,6 +125,7 @@ const MainFrame = (props) => {
   // サイドバーのチームクリックイベント
   const selectMenuClick = (e, index, menuValue) => {
     dispatch(selectMenu(index, menuValue));
+    // console.log(pageSubTitle);
     handleDrawerClose();
   }
 
@@ -134,24 +139,34 @@ const MainFrame = (props) => {
         })}
       >
         <Toolbar>
+          <Typography variant="h6" noWrap className={classes.title}>
+            {pageTitle}  {pageSubTitle}
+          </Typography>
           <IconButton
             color="inherit"
             aria-label="open drawer"
+            edge="end"
             onClick={handleDrawerOpen}
-            edge="start"
             className={clsx(classes.menuButton, open && classes.hide)}
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            {pageTitle}
-          </Typography>
         </Toolbar>
       </AppBar>
+        <main
+          className={clsx(classes.content, {
+            [classes.contentShift]: open,
+          })}
+        >
+          <div className={classes.drawerHeader} />
+          <Typography paragraph>
+            {props.mainContents}
+          </Typography>
+        </main>
       <Drawer
         className={classes.drawer}
         variant="persistent"
-        anchor="left"
+        anchor="right"
         open={open}
         classes={{
           paper: classes.drawerPaper,
@@ -190,16 +205,7 @@ const MainFrame = (props) => {
           ))}
         </List>
       </Drawer>
-      <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open,
-        })}
-      >
-        <div className={classes.drawerHeader} />
-        <Typography paragraph>
-          {props.mainContents}
-        </Typography>
-      </main>
+
     </div>
   );
 }
