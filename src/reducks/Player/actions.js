@@ -6,10 +6,10 @@ export const selectPlayerAction = (playerState) => {
         payload: {
             uniformNumber: playerState.uniformNumber,
             playerName: playerState.playerName,
-            height: playerState.height,
-            bodyWeight: playerState.bodyWeight,
-            throwHand: playerState.throwHand,
-            strikeHand: playerState.strikeHand,
+            position: playerState.position,
+            throwStrikeHand: playerState.throwStrikeHand,
+            baseballHistory: playerState.baseballHistory,
+            comment: playerState.comment,
         }
     }
 }

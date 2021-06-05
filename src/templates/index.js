@@ -11,4 +11,6 @@ export { default as PerformanceTop5 } from './performance/PerformanceTop5';
 export { default as PitcherPerformance } from './performance/PitcherPerformance';
 export { default as ButterPerformance } from './performance/ButterPerformance';
 
-// input
+// edit
+export { default as PlayerEdit } from './edit/PlayerEdit';
+export { default as PlayerEditList } from './edit/PlayerEditList';

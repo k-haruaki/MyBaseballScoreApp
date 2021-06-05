@@ -25,7 +25,7 @@ import BorderColorOutlinedIcon from '@material-ui/icons/BorderColorOutlined';
 import SportsBaseballTwoToneIcon from '@material-ui/icons/SportsBaseballTwoTone';
 import SportsBaseballOutlinedIcon from '@material-ui/icons/SportsBaseballOutlined';
 
-const drawerWidth = 240;
+const drawerWidth = 300;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -96,22 +96,23 @@ const MainFrame = (props) => {
   const pageTitle = 'My Baseball Score Lab';
   const teamInfo = [
     {pagePath: 'top', pageName: 'トップページ'},
-    {pagePath: 'information', pageName: 'お知らせ'},
+    {pagePath: 'information', pageName: 'インフォメーション'},
     {pagePath: 'game-schedule', pageName: '試合日程・結果'},
-    // {pagePath: 'match-result', pageName: '試合結果'},
     {pagePath: 'game-result-list', pageName: '試合結果一覧'},
     {pagePath: 'player-list', pageName: '選手一覧'},
   ];
   const performance = [
-    {pagePath: 'performance/top5', pageName: '部門Top5'},
-    {pagePath: 'performance/pitcher', pageName: '投手成績'},
-    {pagePath: 'performance/butter', pageName: '打者成績'},
+    {pagePath: 'top5/performance', pageName: '部門Top5'},
+    {pagePath: 'pitcher/performance', pageName: '投手成績'},
+    {pagePath: 'butter/performance', pageName: '打者成績'},
   ];
-  const scoreInput = [
-    {pagePath: 'input/game-result', pageName: '試合結果'},
-    {pagePath: 'input/player', pageName: '選手登録'},
-    {pagePath: 'input/team-performance', pageName: 'チーム成績'},
-    {pagePath: 'input/person-performance', pageName: '個人成績'},
+  const scoreEdit = [
+    {pagePath: 'information/edit', pageName: 'インフォーメーション登録'},
+    {pagePath: 'game-schedule/edit', pageName: '試合日程登録'},
+    {pagePath: 'game-result/edit', pageName: '試合結果登録'},
+    {pagePath: 'player/edit', pageName: '選手登録'},
+    {pagePath: 'pitcher/edit', pageName: '投手成績登録'},
+    {pagePath: 'butter/edit', pageName: '打者成績登録'},
   ];
 
   const handleDrawerOpen = () => {
@@ -140,7 +141,7 @@ const MainFrame = (props) => {
       >
         <Toolbar>
           <Typography variant="h6" noWrap className={classes.title}>
-            {pageTitle}  {pageSubTitle}
+            {pageTitle}  {pageSubTitle === '' ? pageSubTitle : '【' + pageSubTitle + '】'}
           </Typography>
           <IconButton
             color="inherit"
@@ -197,7 +198,7 @@ const MainFrame = (props) => {
         </List>
         <Divider />
         <List>
-          {scoreInput.map((value, index) => (
+          {scoreEdit.map((value, index) => (
             <ListItem button key={value.pageName} onClick={(event) => selectMenuClick(event, index, value)}>
               <ListItemIcon>{index % 2 === 0 ? <BorderColorTwoToneIcon /> : <BorderColorOutlinedIcon />}</ListItemIcon>
               <ListItemText primary={value.pageName} />

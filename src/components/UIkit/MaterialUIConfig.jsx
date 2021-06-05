@@ -26,6 +26,11 @@ export const theme = createMuiTheme({
             body: {
                 color: '#ffffff',
             }
+        },
+        MuiIconButton: {
+            root: {
+                color: '#ffffff',
+            }
         }
     }
 })

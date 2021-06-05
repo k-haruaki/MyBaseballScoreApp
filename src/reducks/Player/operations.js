@@ -6,10 +6,10 @@ export const selectPlayer = (playerData) => {
             selectPlayerAction({
                 uniformNumber: playerData.uniformNumber,
                 playerName: playerData.playerName,
-                height: playerData.height,
-                bodyWeight: playerData.bodyWeight,
-                throwHand: playerData.throwHand,
-                strikeHand: playerData.strikeHand,
+                position: playerData.position,
+                throwStrikeHand: playerData.throwStrikeHand,
+                baseballHistory: playerData.baseballHistory,
+                comment: playerData.comment,
             })
         );
     }

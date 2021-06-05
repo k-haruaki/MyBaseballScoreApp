@@ -12,22 +12,22 @@ export const getPlayerName = createSelector (
     state => state.playerName
 )
 
-export const getHeight = createSelector (
+export const getPosition = createSelector (
     [playerSelector],
-    state => state.height
+    state => state.position
 )
 
-export const getBodyWeight = createSelector (
+export const getThrowStrikeHand = createSelector (
     [playerSelector],
-    state => state.bodyWeight
+    state => state.throwStrikeHand
 )
 
-export const getThrowHand = createSelector (
+export const getBaseballHistory = createSelector (
     [playerSelector],
-    state => state.throwHand
+    state => state.baseballHistory
 )
 
-export const getStrikeHand = createSelector (
+export const getComment = createSelector (
     [playerSelector],
-    state => state.strikeHand
+    state => state.comment
 )
